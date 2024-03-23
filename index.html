@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with a Contact Form</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Combined and minified CSS links -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body>
+    
+<div class="content">
+
+    <h1 class="logo">Contact <span>Us</span></h1>
+
+    <div class="contact-wrapper animated bounceInUp">
+        <div class="contact-form">
+            <h3>Contact us</h3>
+            <form action="https://formspree.io/f/mgeglqvr" method="POST" id="contactForm">
+                <p>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname">
+                </p>
+                <p>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email">
+                </p>
+                <p>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </p>
+                <p>
+                    <label for="affair">Subject</label>
+                    <input type="text" id="affair" name="affair">
+                </p>
+                <p class="block">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                </p>
+                <p class="block">
+                    <button type="submit">Send</button>
+                </p>
+            </form>
+        </div>
+        <div class="contact-info"><br>
+            <h4>More Info</h4><br>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> Krishnagiri</li><br>
+                <li><i class="fas fa-phone"></i> (+91) 91506-77849</li><br>
+                <li><i class="fas fa-envelope-open-text"></i> nandhakumar2536@gmail.com</li><br>
+            </ul>
+            <p>Hii, My name is Nandhakumar Nagaraj and I am currently Final Year Information Technology Engineering Student at SRMVEC Kattankulathur, Chennai.
+                <br> My area of Interests are Web development,UI Design and Programming.</p><br>
+            <center>
+                <a href="https://github.com/Nandha2536"><i class="fab fa-github"></i> Visit Github</a> <br> <br>
+                <a href="https://www.linkedin.com/in/nandhakumar-nagaraj-458991211"><i class="fab fa-linkedin"></i> Visit LinkedIn</a>    
+            </center>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        saveFormDataToLocalStorage(formData);
+        alert("Form submitted successfully!");
+    });
+
+    function saveFormDataToLocalStorage(formData) {
+        var formDataJSON = JSON.stringify(formData);
+        localStorage.setItem("formData", formDataJSON);
+    }
+</script>
+
+</body>
+</html>
